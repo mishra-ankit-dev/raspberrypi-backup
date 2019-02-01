@@ -1,0 +1,27 @@
+INFO:root:this is a info message
+ERROR:root:this is a error message
+INFO:root:this is a info message
+ERROR:ex:error
+Traceback (most recent call last):
+  File "<pyshell#21>", line 2, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'
+ERROR:ex:error
+Traceback (most recent call last):
+  File "<pyshell#23>", line 3, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'
+ERROR:ex:this is an error message
+Traceback (most recent call last):
+  File "<pyshell#25>", line 3, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'
+ERROR:ex:error
+Traceback (most recent call last):
+  File "<pyshell#27>", line 3, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'
+ERROR:ex:error
+Traceback (most recent call last):
+  File "<pyshell#30>", line 3, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'
+ERROR:root:error message
+Traceback (most recent call last):
+  File "<pyshell#32>", line 3, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new.py'

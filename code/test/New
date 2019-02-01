@@ -1,0 +1,59 @@
+Python 3.5.3 (default, Jan 19 2017, 14:11:04) 
+[GCC 6.3.0 20170124] on linux
+Type "copyright", "credits" or "license()" for more information.
+>>> logFile = "new.log"
+>>> 
+KeyboardInterrupt
+>>> level = "logging.INFO"
+>>> logger = logging.getLogger("admin")
+        logger.setLevel(level)
+        
+SyntaxError: multiple statements found while compiling a single statement
+>>> logger = logging.getLogger("admin")
+logger.setLevel(level)
+SyntaxError: multiple statements found while compiling a single statement
+>>> logger = logging.getLogger("admin")
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    logger = logging.getLogger("admin")
+NameError: name 'logging' is not defined
+>>> import logging
+>>> logger = logging.getLogger("admin")
+>>> logger.setLevel(level)
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    logger.setLevel(level)
+  File "/usr/lib/python3.5/logging/__init__.py", line 1256, in setLevel
+    self.level = _checkLevel(level)
+  File "/usr/lib/python3.5/logging/__init__.py", line 188, in _checkLevel
+    raise ValueError("Unknown level: %r" % level)
+ValueError: Unknown level: 'logging.INFO'
+>>> level = logging.INFO
+>>> logger.setLevel(level)
+>>> fh = logging.FileHandler(logFile)
+>>> formatter = logging.Formater('{} - {} - {} - {}'.format(asctime, name, level, message))
+Traceback (most recent call last):
+  File "<pyshell#11>", line 1, in <module>
+    formatter = logging.Formater('{} - {} - {} - {}'.format(asctime, name, level, message))
+AttributeError: module 'logging' has no attribute 'Formater'
+>>> formatter = logging.Formatter('{} - {} - {} - {}'.format(asctime, name, level, message))
+Traceback (most recent call last):
+  File "<pyshell#12>", line 1, in <module>
+    formatter = logging.Formatter('{} - {} - {} - {}'.format(asctime, name, level, message))
+NameError: name 'asctime' is not defined
+>>> formatter = logging.Formater('{} - {}'.format(logFile, level))
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    formatter = logging.Formater('{} - {}'.format(logFile, level))
+AttributeError: module 'logging' has no attribute 'Formater'
+>>> formatter = logging.Formatter('{} - {}'.format(logFile, level))
+>>> logger.setFormatter(formatter)
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    logger.setFormatter(formatter)
+AttributeError: 'Logger' object has no attribute 'setFormatter'
+>>> fh.setFormatter(formatter)
+>>> logger.addHandler(fh)
+>>> logger.info("working")
+>>> logger.info("working")
+>>> formatter = logging.Formatter('{} - {}'.format(logFile, level))
