@@ -1,0 +1,14 @@
+2018-10-23 12:01:43,340 - Toll_logger - ERROR - This is an error
+2018-10-23 11:19:08,783 - Toll_logger - ERROR - This is an error
+2018-10-24 12:29:54,727 - Toll_logger - ERROR - Starting program...
+2018-10-24 12:30:08,469 - Toll_logger - ERROR - keyboard interrupt occured...
+Traceback (most recent call last):
+  File "/home/pi/Toll-collection/toll_pandas.py", line 231, in <module>
+    main()
+  File "/home/pi/Toll-collection/toll_pandas.py", line 180, in main
+    word = ser.serial_read()
+  File "/home/pi/Toll-collection/toll_pandas.py", line 70, in serial_read
+    rcv = port.read(12)
+  File "/usr/lib/python3/dist-packages/serial/serialposix.py", line 472, in read
+    ready, _, _ = select.select([self.fd, self.pipe_abort_read_r], [], [], timeout.time_left())
+KeyboardInterrupt
